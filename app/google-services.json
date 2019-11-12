@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "717820844042",
+    "firebase_url": "https://test001-13800.firebaseio.com",
+    "project_id": "test001-13800",
+    "storage_bucket": "test001-13800.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717820844042:android:adbe6e12d34d50577ca7f3",
+        "android_client_info": {
+          "package_name": "com.example.mensajechat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "717820844042-vk0iugni6ponk0ds3165j3ieaf4muouj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnTckZqIiVG91vjqjqr5Dj_rcfTWW5IAg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "717820844042-vk0iugni6ponk0ds3165j3ieaf4muouj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
