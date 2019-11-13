@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private Button btnEnviar;
     private AdapterMensajes adapter;
 
+    private ImageButton btnEnviarFoto;
+
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
 
@@ -41,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         rvMensajes = (RecyclerView) findViewById(R.id.rvMnesajes);
         txtMensaje = (EditText) findViewById(R.id.txtMensaje);
         btnEnviar = (Button) findViewById(R.id.btnEnviar);
+        btnEnviarFoto = (ImageButton) findViewById(R.id.btnEnviarFoto);
 
         database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference("chat");//sala de chat, nodo principal
@@ -55,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
               databaseReference.push().setValue(new Mensaje(txtMensaje.getText().toString(),nombre.getText().toString(),"","1","00:00"));
-               txtMensaje.setText("");
+              txtMensaje.setText("");
 
                  //adapter.addMensaje(new Mensaje(txtMensaje.getText().toString(),nombre.getText().toString(),"","1","00:00"));
             }
@@ -101,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setScrollbar (){
-
         rvMensajes.scrollToPosition(adapter.getItemCount()-1);
     }
 
