@@ -42,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
         txtMensaje = (EditText) findViewById(R.id.txtMensaje);
         btnEnviar = (Button) findViewById(R.id.btnEnviar);
 
-        //database = FirebaseDatabase.getInstance();
-        //databaseReference = database.getReference("chat");//sala de chat, nodo principal
+        database = FirebaseDatabase.getInstance();
+        databaseReference = database.getReference("chat");//sala de chat, nodo principal
 
         adapter = new AdapterMensajes(this);
         LinearLayoutManager l = new LinearLayoutManager(this);
@@ -52,13 +52,12 @@ public class MainActivity extends AppCompatActivity {
 
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
 
-              // databaseReference.push().setValue(new Mensaje(txtMensaje.getText().toString(),nombre.getText().toString(),"","1","00:00"));
-              // txtMensaje.setText("");
+              databaseReference.push().setValue(new Mensaje(txtMensaje.getText().toString(),nombre.getText().toString(),"","1","00:00"));
+               txtMensaje.setText("");
 
-                 adapter.addMensaje(new Mensaje(txtMensaje.getText().toString(),nombre.getText().toString(),"","1","00:00"));
-                 
+                 //adapter.addMensaje(new Mensaje(txtMensaje.getText().toString(),nombre.getText().toString(),"","1","00:00"));
             }
         });
 
@@ -66,11 +65,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemRangeInserted(int positionStart, int itemCount) {
                 super.onItemRangeInserted(positionStart, itemCount);
-              //  setScrollbar();
+                setScrollbar();
             }
         });
 
-       /* databaseReference.addChildEventListener(new ChildEventListener() {
+        databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Mensaje m = dataSnapshot.getValue(Mensaje.class);
@@ -102,9 +101,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setScrollbar (){
+
         rvMensajes.scrollToPosition(adapter.getItemCount()-1);
     }
 
-        */
+
 }
-}
+
