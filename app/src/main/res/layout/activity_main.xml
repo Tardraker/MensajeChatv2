@@ -36,7 +36,7 @@
             android:id="@+id/btnEnviarFoto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:drawable/ic_menu_gallery"
+            android:background="@android:drawable/ic_menu_camera"
             android:layout_gravity="center"
             android:contentDescription="@string/todo">
 
